@@ -116,7 +116,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5448910417558238025}
-        m_MethodName: Select
+        m_MethodName: OnItemClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
