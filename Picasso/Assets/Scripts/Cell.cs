@@ -1,18 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Cell : MonoBehaviour
+namespace Assets.Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Cell : MonoBehaviour
     {
-        
-    }
+        public SpriteRenderer Renderer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void SetColor(Color color)
+        {
+            Renderer.color = color;
+        }
     }
 }

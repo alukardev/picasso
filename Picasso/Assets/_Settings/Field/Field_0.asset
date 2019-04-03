@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c311c37daaaf77458c3406097facf96, type: 3}
   m_Name: Field_0
   m_EditorClassIdentifier: 
-  Width: 10
-  Height: 10
-  CellPrefab: {fileID: 7563404999702999456, guid: 756018366acf6234083c7e47871a9fdc,
+  Size: 5
+  Position: {x: -5.25, y: -3, z: 8}
+  DrawDelay: 0.15
+  CellPrefab: {fileID: 3309860727760534995, guid: 756018366acf6234083c7e47871a9fdc,
     type: 3}
-  CellPositionOffset: 1.1
+  CellPositionOffset: 1.05
