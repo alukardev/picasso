@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Assets.Scripts
 {
@@ -30,20 +31,38 @@ namespace Assets.Scripts
 
             var touch = Input.GetTouch(0);
 
+            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                return;
+                
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    Debug.Log("start touch");
+                    if (!_isPressed)
+                    {
+                        _isPressed = true;
+                        OnTouch?.Invoke(true);
+
+                        Debug.Log("start touch");
+                    }
                     break;
                 case TouchPhase.Canceled:
                 case TouchPhase.Ended:
-                    Debug.Log("End touch");
+                    if (_isPressed)
+                    {
+                        _isPressed = false;
+                        OnTouch?.Invoke(false);
+
+                        Debug.Log("End touch");
+                    }
                     break;
             }
         }
 
         private void OnMouseInput()
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             if (Input.GetMouseButtonDown(0))
             {
                 if (!_isPressed)

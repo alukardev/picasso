@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.UI;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -6,6 +7,7 @@ namespace Assets.Scripts
     public class Field : MonoBehaviour
     {
         public FieldSettings Settings;
+        public InventoryView InventoryView;
 
         private List<Cell> _cells;
         private GameManager _gameManager;
@@ -90,7 +92,7 @@ namespace Assets.Scripts
 
                 if (_drawDelay >= Settings.DrawDelay)
                 {
-                    _cells[_currentCellIndex].SetColor(Color.blue);
+                    _cells[_currentCellIndex].SetColor(InventoryView.GetCurrentColor());
 
                     _drawDelay = 0;
                     _currentCellIndex++;
